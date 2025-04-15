@@ -3,5 +3,6 @@ uvicorn
 pymongo
 joblib
 numpy
+pandas
 scikit-learn
 python-multipart
