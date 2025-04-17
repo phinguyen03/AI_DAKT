@@ -2,6 +2,7 @@ from fastapi import FastAPI, Query
 import uvicorn
 from pydantic import BaseModel
 import pymongo
+from datetime import datetime
 import numpy as np
 from AI import load_and_prepare_data, RandomForest_Training, SVC_Training
 import joblib
@@ -49,7 +50,7 @@ async def update_data_post(item: Item):
         "pH": item.pH,
         "Do_duc": item.Do_duc,
         "Nhiet_do": item.Nhiet_do,
-        "thoi_gian": item.thoi_gian,
+        "thoi_gian": datetime.now(),
         "khu_vuc": item.khu_vuc,
         "kenh_song": item.kenh_song,
         "prediction": label
