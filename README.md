@@ -1,2 +1,3 @@
 # AI_DAKT
-Deploy AI model on mongodb
+Deploy AI model on mongodb through render platform
+
