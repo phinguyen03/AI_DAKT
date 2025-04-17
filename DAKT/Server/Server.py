@@ -2,7 +2,6 @@ from fastapi import FastAPI, Query
 import uvicorn
 from pydantic import BaseModel
 import pymongo
-from datetime import datetime
 import numpy as np
 from AI import load_and_prepare_data, RandomForest_Training, SVC_Training
 import joblib
