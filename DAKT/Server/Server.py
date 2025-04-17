@@ -34,7 +34,7 @@ class Item(BaseModel):
     pH: float
     Do_duc: float
     Nhiet_do: float
-    thoi_gian: datetime
+    thoi_gian: str
     khu_vuc: str
     kenh_song:str
     
