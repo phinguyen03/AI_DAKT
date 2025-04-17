@@ -50,7 +50,7 @@ async def update_data_post(item: Item):
         "pH": item.pH,
         "Do_duc": item.Do_duc,
         "Nhiet_do": item.Nhiet_do,
-        "thoi_gian": datetime.now(),
+        "thoi_gian": item.thoi_gian,
         "khu_vuc": item.khu_vuc,
         "kenh_song": item.kenh_song,
         "prediction": label
