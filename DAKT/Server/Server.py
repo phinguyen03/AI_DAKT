@@ -72,10 +72,13 @@ async def get_data(limit: int = Query(10)):
     
     for record in cursor:
         data_return.append({
-            "id": record['id'],
-            "time": record['time'],
-            "data1": record['data1'],
-            "data2": record['data2'],
+            "pH": record['pH'],
+            "Do_duc": record['Do_duc'],
+            "Nhiet_do": record['Nhiet_do'],
+            "thoi_gian": record['thoi_gian'],
+            "khu_vuc": record["khu_vuc"],
+            "kenh_song": record["kenh_song"],
+            "prediction": record["prediction"]
         })
 
     return data_return
