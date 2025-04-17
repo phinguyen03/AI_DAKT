@@ -4,12 +4,15 @@ import numpy as np
 import json
 
 
-def Data(data1, data2, data3):
+def Data(data1, data2, data3, data4, data5, data6):
   
     data = {
         "pH": data1,
         "Do_duc": data2,
         "Nhiet_do": data3,
+        "thoi_gian": data4,
+        "khu_vuc": data5,
+        "kenh_song": data6
        
     }
     params = json.dumps(data).encode()
@@ -17,7 +20,7 @@ def Data(data1, data2, data3):
 
 
 def MyPostJson(params):
-    req = request.Request('http://192.168.1.10:8002/update_post', method="POST")
+    req = request.Request('https://ai-dakt-3.onrender.com/update_post', method="POST")
     req.add_header("Content-Type", "application/json")
     req.add_header("accept", "application/json")
     
@@ -31,7 +34,7 @@ def MyPostJson(params):
 
 def my_get():
     try:
-        req = request.Request('http://192.168.1.10:8001/get', method="GET")
+        req = request.Request('https://ai-dakt-3.onrender.com/get', method="GET")
         req.add_header("accept", "application/json")  
         r = request.urlopen(req)
         response_data = r.read().decode()
@@ -43,19 +46,26 @@ def my_get():
     
 def main():
     count = 0   
-    timenow = strftime('%Y-%m-%d %H:%M:%S')
     while True:
-        pH = np.random.uniform(1, 13)
-        do_duc = np.random.uniform(0, 1000)
-        nhiet_do = np.random.uniform(0, 80)
+        pH = round(np.random.uniform(1, 13), 2)
+        do_duc = round(np.random.uniform(0, 1000), 2)
+        nhiet_do = round(np.random.uniform(0, 80), 2)
+        thoi_gian = strftime('%Y-%m-%d %H:%M:%S')
+        khu_vuc = "Govap"
+        kenh_song = "An Thong"
 
         sleep(2)
         count += 1
-        params_json = Data(pH, do_duc, nhiet_do)
+        params_json = Data(pH,
+                           do_duc,
+                           nhiet_do,
+                           thoi_gian,
+                           khu_vuc,
+                           kenh_song)
         post_json = MyPostJson(params_json)
         print("Sending JSON data:", post_json)
-        #receive_data = my_get()
-        #print(receive_data)        
+        receive_data = my_get()
+        print(receive_data)        
 
        
 if __name__ == '__main__':
