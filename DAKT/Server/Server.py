@@ -56,7 +56,14 @@ async def update_data_post(item: Item):
         
     }
     mycol.insert_one(mydict)
-    return {"status": "success", "prediction": label}
+    return {"status": "success",
+            "pH": mydict["pH"],
+            "Do_duc": mydict["Do_duc"],
+            "Nhiet_do": mydict["Nhiet_do"],
+            "Thoi_gian": mydict["thoi_gian"],
+            "Khu_vuc": mydict["khu_vuc"],
+            "Kenh_song": mydict["kenh_song"],
+            "prediction": label}
 
 @app.get("/get")
 async def get_data(limit: int = Query(10)):
