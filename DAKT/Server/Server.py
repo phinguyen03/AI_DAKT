@@ -33,6 +33,9 @@ class Item(BaseModel):
     pH: float
     Do_duc: float
     Nhiet_do: float
+    thoi_gian: datetime
+    khu_vuc: str
+    kenh_song:str
     
     
 @app.post("/update_post")
@@ -46,6 +49,9 @@ async def update_data_post(item: Item):
         "pH": item.pH,
         "Do_duc": item.Do_duc,
         "Nhiet_do": item.Nhiet_do,
+        "thoi_gian": item.thoi_gian,
+        "khu_vuc": item.khu_vuc,
+        "kenh_song": item.kenh_song,
         "prediction": label
         
     }
