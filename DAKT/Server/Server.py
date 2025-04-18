@@ -67,7 +67,7 @@ async def update_data_post(item: Item):
 
 @app.get("/get")
 async def get_data(limit: int = Query(10)):
-    cursor = mycol.find().sort("time", pymongo.DESCENDING).limit(limit)
+    cursor = mycol.find().sort("thoi_gian", pymongo.DESCENDING).limit(limit)
     data_return = []
     
     for record in cursor:
