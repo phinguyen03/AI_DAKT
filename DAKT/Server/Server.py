@@ -91,4 +91,4 @@ async def get_data(limit: int = Query(1)):
     return data_return
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="192.168.1.5", port=8200)
+    uvicorn.run(app, host="0.0.0.0", port=8200)
