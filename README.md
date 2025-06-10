@@ -1,6 +1,19 @@
 # Smart Wastewater Monitoring System
+
+Dataset:
 - Collect data on sensors: pH, turbidity, temperature
-- Communication between Arduino Nano and Raspberry Pi4 through LoRa
-- Label prediction: Pollution, Signs of Water Pollution, Safe by Randomforest
-- Server database: Mongodb
-- Global deployment: Render platform
+
+Device:
+- Arduino Nano, Raspberry Pi4
+  
+Communication:
+- Communication with LoRa
+
+Classification model:
+- Randomforest
+
+Cloud server:
+- Mongodb
+
+Deployment:
+- Render platform
