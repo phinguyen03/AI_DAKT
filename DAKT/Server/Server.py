@@ -9,7 +9,7 @@ import joblib
 
 app = FastAPI()
 
-myclient = pymongo.MongoClient("mongodb+srv://taikhoan:@cluster0.c3qpz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+myclient = pymongo.MongoClient("mongodb+srv://phi:123@cluster0.c3qpz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 mydb = myclient["Testmodel"]
 mycol = mydb["mongotest"]
 
