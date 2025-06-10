@@ -1,6 +1,6 @@
 # Smart Wastewater Monitoring System
 - Collect data on sensors: pH, turbidity, temperature
 - Communication between Arduino Nano and Raspberry Pi4 through LoRa
-- Predict label: Pollution, Signs of Water Pollution, Safe by Randomforest
+- Label prediction: Pollution, Signs of Water Pollution, Safe by Randomforest
 - Server database: Mongodb
 - Global deployment: Render platform
