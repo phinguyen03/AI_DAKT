@@ -17,3 +17,6 @@ Cloud server:
 
 Deployment:
 - Render platform
+
+App:
+- Android Studio
